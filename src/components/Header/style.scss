@@ -1,0 +1,111 @@
+
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.header {
+  width: 100%;
+  height: 90px;
+  background-color: rgba($white-color, 0);
+  border: 1px solid #D6DCE4;
+  position: fixed;
+  display: flex;
+  left: -1px;
+  z-index: 2;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    height: 100%;
+    background-color: $white-color;
+  }
+
+  &__left-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: 'Segoe UI';
+    font-weight: $extraMedium;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &__menu-btn {
+    background: linear-gradient(93.73deg, $electric-violet-color 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    width: 190px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+  &__menu-text {
+    font-family: 'Roboto';
+    font-weight: $extraMedium;
+    font-size: 18px;
+    line-height: 21px;
+    color: $white-color;
+  }
+
+  &__search-block {
+    width: 240px;
+    height: 20px;
+    background: $wild-sand-color;
+    border-radius: 100px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  &__search-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  &__search-input {
+    border: none;
+    background-color: rgba($white-color, 0);
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 100%;
+
+    &::placeholder {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: rgba($black-color, 0.5);
+    }
+  }
+
+  &__sale-btn {
+    width: 185px;
+    height: 60px;
+    background: linear-gradient(93.73deg, #FF922E 3.36%, #D51717 100.79%);
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__customer-btn {
+    width: 185px;
+    height: 60px;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}

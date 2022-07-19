@@ -1,0 +1,50 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.banner {
+  width: 100%;
+  aspect-ratio: 1280 / 500;
+  background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+  border-radius: 30px;
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-top: 90px;
+  }
+
+  &__text {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: #FFFFFF;
+    white-space: pre-wrap;
+  }
+
+  &__btn {
+    background: $white-color;
+    border-radius: 100px;
+    width: 242px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1C1C1C;
+    margin-top: 40px;
+  }
+
+  &__img {
+    width: 457px;
+    height: 457px;
+    margin-left: 73px;
+  }
+}

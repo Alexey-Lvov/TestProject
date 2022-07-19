@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.advertising-strip {
+  width: 110%;
+  background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+  transform: rotate(-1.91deg);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 110px;
+
+  &__one-text {
+    margin-left: 36px;
+    font-family: 'Segoe UI';
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: $white-color;
+    transform: rotate(-1.91deg);
+    white-space: nowrap;
+  }
+
+  &__two-text {
+    margin-left: 36px;
+  }
+}
