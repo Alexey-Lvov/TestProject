@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
 import counterReducer from './test';
+
+const saga = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
   },
+  middleware: [saga],
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
