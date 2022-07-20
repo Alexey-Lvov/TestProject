@@ -1,0 +1,212 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.product-item {
+  margin-right: 30px;
+  margin-bottom: 60px;
+
+  &:nth-child(5n+5) {
+    margin-right: 0;
+  }
+
+  @include media(1407) {
+    &:nth-child(4n+4) {
+      margin-right: 0;
+    }
+
+    &:nth-child(5n+5) {
+      margin-right: 30px;
+    }
+  }
+
+  @include media(1128) {
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    &:nth-child(4n+4) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(5n+5) {
+      margin-right: 30px;
+    }
+  }
+
+  @include media($small) {
+    &:nth-child(3n+3) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(4n+4) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(5n+5) {
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__main-block {
+    position: relative;
+    background: #E9E9E9;
+    border-radius: 10px;
+    width: 232px;
+    height: 270px;
+    margin-bottom: 22px;
+    cursor: pointer;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__before-after-price {
+    position: absolute;
+    width: 137px;
+    height: 27px;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &__summ {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+  }
+
+  &__full-summ {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__discount {
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    width: 57px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 10px;
+    bottom: 10px;
+    position: absolute;
+  }
+
+  &__cashback {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+
+  &__cashback-text {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    background: #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  &__summ-block {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1C1C1C;
+    margin-bottom: 9px;
+  }
+
+  &__summ-block-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+
+  &__full-summ-block {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 12px;
+  }
+
+  &__full-summ-block-text {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(28, 28, 28, 0.5);
+  }
+
+  &__vual {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &__vual-btn {
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    width: 185px;
+    height: 60px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+}

@@ -1,54 +1,38 @@
-
 @import 'styles/variables.scss';
 @import 'styles/media.scss';
 
-.header {
-  width: 100%;
-  height: 90px;
-  background-color: rgba($white-color, 0);
-  border: 1px solid #D6DCE4;
-  position: fixed;
+.menu {
   display: flex;
-  left: -1px;
-  z-index: 2;
+  width: 0;
+  height: 0;
+  position: fixed;
+  z-index: 3;
 
-  @include media($small) {
-  }
-
-  @include media($xmini) {
-    padding: 0;
+  &_open {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
   }
 
   &__content {
+    width: 90vw;
+    height: 100vh;
+    z-index: 4;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10vw;
+    transition: 1s;
+    transform: translate(215%);
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 100%;
-    height: 100%;
-    background-color: $white-color;
-  }
-
-  &__left-block {
-    display: flex;
+    flex-direction: column;
     align-items: center;
 
-    @include media($xmini) {
-      width: 100%;
-      justify-content: space-evenly;
+    &_open {
+      transform: translate(0%);
     }
-  }
-
-  &__right-block {
-    display: flex;
-    align-items: center;
-  }
-
-  &__logo {
-    font-family: 'Segoe UI';
-    font-weight: $extraMedium;
-    font-size: 30px;
-    line-height: 40px;
   }
 
   &__menu-btn {
@@ -62,10 +46,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-    @include media($xmini) {
-      display: none;
-    }
   }
 
   &__menu-text {
@@ -77,35 +57,21 @@
   }
 
   &__search-block {
-    width: 300px;
+    width: 284px;
     height: 60px;
     background: $wild-sand-color;
     border-radius: 100px;
     padding: 20px 30px;
-    display: flex;
+    display: none;
     align-items: center;
-    margin-left: 30px;
-
-    @include media($small) {
-      display: none;
-    }
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 50px;
   }
 
   &__search-icon {
     width: 19px;
     height: 19px;
-
-    &_tablet {
-      display: none;
-
-      @include media($small) {
-        display: block;
-        width: 30px;
-        height: 30p;
-        margin-left: 40px;
-        object-fit: contain;
-      }
-    }
   }
 
   &__search-input {
@@ -126,7 +92,7 @@
   }
 
   &__sale-btn {
-    width: 185px;
+    width: 285px;
     height: 60px;
     background: linear-gradient(93.73deg, #FF922E 3.36%, #D51717 100.79%);
     border-radius: 100px;
@@ -137,42 +103,37 @@
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
-
-    @include media($xmini) {
-      display: none;
-    }
+    margin-bottom: 30px;
   }
 
   &__customer-btn {
-    width: 185px;
+    width: 285px;
     height: 60px;
     background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
     border-radius: 100px;
     border: none;
     cursor: pointer;
-    margin-left: 10px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+  }
 
-    @include media($xmini) {
-      display: none;
-    }
+  &__top-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__close-btn {
+    background-color: rgba($white-color, 0);
+    border: none;
   }
 
   &__menu-icon {
     width: 30px;
     height: 30px;
-
-    &_mobile {
-      display: none;
-
-      @include media($xmini) {
-        display: block;
-      }
-    }
   }
 }
