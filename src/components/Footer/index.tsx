@@ -32,7 +32,7 @@ function Footer() {
           <span className={b('top-content-text')}>©2022. Все права защищены.</span>
           <span className={b('top-content-text')}>Политика конфиденциальности</span>
           <span className={b('top-content-text')}>Публичная оферта</span>
-          <span className={b('top-content-text')}>Поддержка</span>
+          <span className={b('top-content-text', { help: true })}>Поддержка</span>
         </div>
       </div>
       <div className={b('bottom-block')}>

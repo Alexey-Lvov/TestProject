@@ -49,6 +49,7 @@ function ProductItem(props: PropsInterface) {
               Узнать условия
 
             </button>
+            <button className={b('vual-btn')} type="button">Узнать условия</button>
           </div>
         )}
       </div>

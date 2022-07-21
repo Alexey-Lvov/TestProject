@@ -13,7 +13,6 @@
   flex-direction: column;
   align-items: center;
 
-
   @include mediaMinMax(1025, $normal) {
     padding: 3.646vw 3.125vw;
   }
@@ -30,6 +29,11 @@
     line-height: 110%;
     color: #1C1C1C;
     width: 100%;
+
+    @include media($xmini) {
+      font-size: 25px;
+      line-height: 27px;
+    }
   }
 
   &__title-text {
@@ -46,6 +50,11 @@
       flex-wrap: nowrap;
       overflow-x: auto;
       justify-content: flex-start;
+      width: 100%;
+    }
+
+    @include media($xmini) {
+      margin-top: 60px;
     }
   }
 
@@ -73,6 +82,10 @@
       margin: -2px; /* !importanté */
       border-radius: inherit; /* !importanté */
       background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    }
+
+    @include media($small) {
+      display: none;
     }
   }
 }

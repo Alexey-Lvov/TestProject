@@ -8,7 +8,7 @@
   border-radius: 30px;
   display: flex;
   max-width: 1280px;
-  min-height: 420px;
+  min-height: 440px;
   margin: 0 auto;
   position: relative;
 
@@ -29,6 +29,10 @@
     padding-left: 80px;
     padding-top: 90px;
     z-index: 1;
+
+    @include media($xnormal) {
+      padding-left: 30px;
+    }
 
     @include media($small) {
       padding-left: 50px;
@@ -127,6 +131,11 @@
     &_five {
       right: 1200px;
       bottom: 300px;
+    }
+
+    &_six {
+      right: 1200px;
+      bottom: -800px;
     }
   }
 }

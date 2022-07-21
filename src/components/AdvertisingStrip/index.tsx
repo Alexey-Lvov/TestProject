@@ -8,12 +8,15 @@ const b = bem('advertising-strip');
 function AdvertisingStrip() {
   return (
     <div className={b('')}>
-      <span className={b('one-text')}>Wildberries</span>
-      <img className={b('two-text')} src={ozonImage} alt="ozon" />
-      <span className={b('one-text')}>Яндекс маркет</span>
-      <span className={b('one-text')}>Wildberries</span>
-      <img className={b('two-text')} src={ozonImage} alt="ozon" />
-      <span className={b('one-text')}>Яндекс маркет</span>
+      <div className={b('content')}>
+        <span className={b('one-text')}>Wildberries</span>
+        <img className={b('two-text')} src={ozonImage} alt="ozon" />
+        <span className={b('one-text')}>Яндекс маркет</span>
+        <span className={b('one-text')}>Wildberries</span>
+        <img className={b('two-text')} src={ozonImage} alt="ozon" />
+        <span className={b('one-text')}>Яндекс маркет</span>
+      </div>
+
     </div>
   );
 }
