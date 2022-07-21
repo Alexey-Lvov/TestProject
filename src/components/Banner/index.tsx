@@ -21,6 +21,7 @@ function Banner() {
       <img className={b('ellipse-icon', { free: true })} src={ellipseIcon} alt="ellipse" />
       <img className={b('ellipse-icon', { four: true })} src={ellipseIcon} alt="ellipse" />
       <img className={b('ellipse-icon', { five: true })} src={ellipseIcon} alt="ellipse" />
+      <img className={b('ellipse-icon', { six: true })} src={ellipseIcon} alt="ellipse" />
     </div>
   );
 }
