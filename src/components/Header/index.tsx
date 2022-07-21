@@ -1,16 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import type { RootState } from 'redux/store';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import bem from 'utils/bem';
 import './style.scss';
+import Menu from 'components/Menu';
 import searchIcon from 'img/search.png';
+import menuIcon from 'img/menu-icon.png';
 
 const b = bem('header');
 
 function Header() {
-  const count = useSelector((state: RootState) => state.counter);
+  const [isOpenMenu, openMenu] = useState(false);
 
-  console.log(count);
+  const handleClick = () => {
+    openMenu(true);
+  };
 
   return (
     <div className={b('')}>
@@ -18,12 +21,17 @@ function Header() {
         <div className={b('left-block')}>
           <div className={b('logo')}>Логотип</div>
           <button className={b('menu-btn')} type="button">
+            <img className={b('menu-icon')} src={menuIcon} alt="menu" />
             <span className={b('menu-text')}>Каталог</span>
           </button>
           <div className={b('search-block')}>
             <img className={b('search-icon')} src={searchIcon} alt="icon" />
             <input className={b('search-input')} placeholder="Хочу найти" />
           </div>
+          <img className={b('search-icon', { tablet: true })} src={searchIcon} alt="icon" />
+          <button onClick={handleClick} style={{ background: 'none', border: 'none' }} type="button">
+            <img className={b('menu-icon', { mobile: true })} src={menuIcon} alt="menu" />
+          </button>
         </div>
         <div className={b('right-block')}>
           <button className={b('sale-btn')} type="button">
@@ -34,6 +42,7 @@ function Header() {
           </button>
         </div>
       </div>
+      {ReactDOM.createPortal(<Menu isOpenMenu={isOpenMenu} close={() => openMenu(false)} />, document.getElementById('root') as HTMLElement)}
     </div>
   );
 }

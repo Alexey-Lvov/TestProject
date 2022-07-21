@@ -1,8 +1,9 @@
-import { put } from 'redux-saga/effects';
-import { increment } from './test';
+import { all } from 'redux-saga/effects';
+import { getProductsSaga, getTopProductsSaga } from './products/saga';
 
-function* testSaga() {
-  yield put(increment());
+export default function* rootSaga() {
+  yield all([
+    getProductsSaga(),
+    getTopProductsSaga(),
+  ]);
 }
-
-export default testSaga;

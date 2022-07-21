@@ -1,6 +1,7 @@
 import React from 'react';
 import bem from 'utils/bem';
 import bannerImage from 'img/envelope-amico-2211 1.png';
+import ellipseIcon from 'img/ellipse.png';
 import './style.scss';
 
 const b = bem('banner');
@@ -15,6 +16,11 @@ function Banner() {
         <button className={b('btn')} type="button">Как работает сервис</button>
       </div>
       <img className={b('img')} src={bannerImage} alt="banner" />
+      <img className={b('ellipse-icon', { one: true })} src={ellipseIcon} alt="ellipse" />
+      <img className={b('ellipse-icon', { two: true })} src={ellipseIcon} alt="ellipse" />
+      <img className={b('ellipse-icon', { free: true })} src={ellipseIcon} alt="ellipse" />
+      <img className={b('ellipse-icon', { four: true })} src={ellipseIcon} alt="ellipse" />
+      <img className={b('ellipse-icon', { five: true })} src={ellipseIcon} alt="ellipse" />
     </div>
   );
 }

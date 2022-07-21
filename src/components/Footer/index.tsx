@@ -9,6 +9,13 @@ import './style.scss';
 const b = bem('footer');
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div className={b('')}>
       <div className={b('top-block')}>
@@ -31,9 +38,9 @@ function Footer() {
       <div className={b('bottom-block')}>
         <img src={footerIcon} alt="icon" />
       </div>
-      <div className={b('arrow-block')}>
+      <button className={b('arrow-block')} type="button" onClick={scrollToTop}>
         <img src={arrowIcon} alt="arrow" />
-      </div>
+      </button>
     </div>
   );
 }

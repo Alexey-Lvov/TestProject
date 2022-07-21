@@ -1,3 +1,18 @@
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+span {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: SegoeUI;
+  font-weight: 600;
+  src: local('SegoeUI'), url(./fonts/SegoeUI.ttf) format('opentype');
 }
