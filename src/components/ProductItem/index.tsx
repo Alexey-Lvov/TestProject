@@ -22,6 +22,10 @@ function ProductItem(props: PropsInterface) {
     setIsFocus(true);
   };
 
+  const handileClick = () => {
+    window.location.href = `/product?id=${item.id}`;
+  };
+
   return (
     <div className={b('')}>
       <div
@@ -37,7 +41,14 @@ function ProductItem(props: PropsInterface) {
         <div className={b('discount')}>{`${item.discount}%`}</div>
         {isFocus && (
           <div className={b('vual')}>
-            <button className={b('vual-btn')} type="button">Узнать условия</button>
+            <button
+              className={b('vual-btn')}
+              type="button"
+              onClick={handileClick}
+            >
+              Узнать условия
+
+            </button>
           </div>
         )}
       </div>
