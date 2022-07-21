@@ -12,16 +12,22 @@ const b = bem('product-item');
 function ProductItem(props: PropsInterface) {
   const { item } = props;
 
-  const [onFocus, setOnFocus] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
 
-  console.log(item);
+  const handleMouseEnter = () => {
+    setIsFocus(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsFocus(true);
+  };
 
   return (
     <div className={b('')}>
       <div
         className={b('main-block')}
-        onMouseEnter={() => setOnFocus(true)}
-        onMouseLeave={() => setOnFocus(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img className={b('img')} src={item.imageUri} alt="imageUri" />
         <div className={b('before-after-price')}>
@@ -29,7 +35,7 @@ function ProductItem(props: PropsInterface) {
           <span className={b('full-summ')}>{`${item.fullSumm}₽`}</span>
         </div>
         <div className={b('discount')}>{`${item.discount}%`}</div>
-        {onFocus && (
+        {isFocus && (
           <div className={b('vual')}>
             <button className={b('vual-btn')} type="button">Узнать условия</button>
           </div>

@@ -11,6 +11,10 @@ const b = bem('header');
 function Header() {
   const [isOpenMenu, openMenu] = useState(false);
 
+  const handleClick = () => {
+    openMenu(true);
+  };
+
   return (
     <div className={b('')}>
       <div className={b('content')}>
@@ -25,7 +29,7 @@ function Header() {
             <input className={b('search-input')} placeholder="Хочу найти" />
           </div>
           <img className={b('search-icon', { tablet: true })} src={searchIcon} alt="icon" />
-          <button onClick={() => openMenu(true)} style={{ background: 'none', border: 'none' }} type="button">
+          <button onClick={handleClick} style={{ background: 'none', border: 'none' }} type="button">
             <img className={b('menu-icon', { mobile: true })} src={menuIcon} alt="menu" />
           </button>
         </div>

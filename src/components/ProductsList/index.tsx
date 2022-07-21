@@ -20,7 +20,7 @@ function ProductList(props: PropsInterface) {
   const productsState = useSelector((state: RootState) => state.products);
   const dispatch = useDispatch();
 
-  const [filterProducts, setFilterProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState<Product[]>([]);
 
   const { products: productsItem, topProducts } = productsState;
   const products = withPagination ? productsItem : topProducts;
@@ -47,8 +47,8 @@ function ProductList(props: PropsInterface) {
         <span className={b('title-text')}> с кешбеком</span>
       </div>
       <div className={b('list')}>
-        {filterProducts && filterProducts.map((
-          item: Product,
+        {filterProducts.map((
+          item,
         ) => <ProductItem item={item} />)}
       </div>
       {products.length > filterProducts.length
