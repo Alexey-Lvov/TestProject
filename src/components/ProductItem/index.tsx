@@ -19,11 +19,11 @@ function ProductItem(props: PropsInterface) {
   };
 
   const handleMouseLeave = () => {
-    setIsFocus(true);
+    setIsFocus(false);
   };
 
   const handileClick = () => {
-    window.location.href = `/product?id=${item.id}`;
+    window.location.href = `/product/${item.id}`;
   };
 
   return (
@@ -47,9 +47,7 @@ function ProductItem(props: PropsInterface) {
               onClick={handileClick}
             >
               Узнать условия
-
             </button>
-            <button className={b('vual-btn')} type="button">Узнать условия</button>
           </div>
         )}
       </div>

@@ -1,0 +1,106 @@
+
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.image-slider {
+  display: flex;
+
+  @include media($xsmall) {
+    flex-direction: column;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+
+    @include media($xsmall) {
+      order: 2;
+    }
+  }
+
+  &__list-images {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+    max-height: 510px;
+    overflow-y: auto;
+
+    @include media($xsmall) {
+      flex-direction: initial;
+      width: 100%;
+    }
+
+    &::-webkit-scrollbar {width:0px;}
+  }
+
+  &__list-image-btn {
+    display: flex;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    @include media($xsmall) {
+      margin: 0;
+      margin-right: 6px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__list-image {
+    width: 130px;
+    min-height: 160px;
+    object-fit: contain;
+    background: #E9E9E9;
+  }
+
+  &__arrow-btn {
+    width: 15px;
+    height: 24px;
+    cursor: pointer;
+
+    @include media($xsmall) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &_bottom {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__main-image {
+    width: 650px;
+    height: 639px;
+    object-fit: contain;
+    margin: auto 0;
+    margin-left: 20px;
+    background: #E9E9E9;
+
+    @include mediaMinMax(1025, $normal) {
+      width: 33.854vw;
+      height: 33.281vw;
+    }
+
+    @include media($small) {
+      width: 77.246vw;
+      height: 62.598vw;
+    }
+
+    @include media($xsmall) {
+      order: 1;
+      width: 89.444vw;
+      height: 88.056vw;
+      margin-left: 0;
+      margin: auto;
+    }
+  }
+}

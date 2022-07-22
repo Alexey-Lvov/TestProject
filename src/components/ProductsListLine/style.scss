@@ -1,21 +1,14 @@
 @import 'styles/variables.scss';
 @import 'styles/media.scss';
 
-.product-list {
-  padding: 70px 60px;
-  width: 100%;
-  max-width: 1440px;
+.product-list-line {
+  width: 95vw;
+  max-width: 1280px;
   margin: 0 auto;
-  border: 20px solid;
-  box-sizing: border-box;
-  border-image-source: linear-gradient(125.93deg, #C4C4C4 -2.52%, #535FFF -2.51%, #F49C3A 104.49%, #FF921A 104.49%);
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @include mediaMinMax(1025, $normal) {
-    padding: 3.646vw 3.125vw;
-  }
+  margin-bottom: 50px;
 
   @include media($small) {
     border: none;
@@ -43,15 +36,9 @@
   &__list {
     margin-top: 60px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @include media($small) {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      justify-content: flex-start;
-      width: 100%;
-    }
+    overflow-x: auto;
+    justify-content: flex-start;
+    width: 100%;
 
     @include media($xmini) {
       margin-top: 60px;

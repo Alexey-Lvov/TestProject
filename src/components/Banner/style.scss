@@ -2,7 +2,7 @@
 @import 'styles/media.scss';
 
 .banner {
-  width: 100%;
+  width: 95vw;
   aspect-ratio: 1280 / 500;
   background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
   border-radius: 30px;
@@ -47,7 +47,7 @@
   }
 
   &__text {
-    font-family: 'Segoe UI';
+    font-family: 'SegoeUI';
     font-style: normal;
     font-weight: 900;
     font-size: 50px;

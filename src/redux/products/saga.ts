@@ -7,6 +7,9 @@ import {
   getTopProductsSuccess,
   getTopProductsStart,
   getTopProductsFail,
+  getProductStart,
+  getProductSuccess,
+  getProductFail,
 } from './reducer';
 
 function* getProductsSuccessSaga(): any {
@@ -53,4 +56,26 @@ function* getTopProductsSaga() {
   yield takeEvery(getTopProductsStart.toString(), getTopProductsSuccessSaga);
 }
 
-export { getProductsSaga, getTopProductsSaga };
+function* getProductSuccessSaga(action: any) {
+  try {
+    const { data } = yield apiCall({
+      type: 'GET',
+      url: `http://localhost:3000/products/${action.payload}`,
+      body: '',
+      headers: '',
+      isToken: '',
+      params: '',
+      token: '',
+      responseType: '',
+    });
+    yield put(getProductSuccess(data));
+  } catch (e) {
+    yield put(getProductFail());
+  }
+}
+
+function* getProductSaga() {
+  yield takeEvery(getProductStart.toString(), getProductSuccessSaga);
+}
+
+export { getProductsSaga, getTopProductsSaga, getProductSaga };

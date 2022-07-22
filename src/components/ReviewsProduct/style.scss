@@ -1,106 +1,22 @@
 @import 'styles/variables.scss';
 @import 'styles/media.scss';
 
-.product-card {
+.reviews-product {
   width: 95vw;
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 
   &__top-block {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
 
     @include media($small) {
       flex-direction: column;
+      margin-bottom: 80px;
     }
-  }
-
-  &__top-content {
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-
-    @include media($small) {
-      margin-top: 40px;
-      margin-left: 0;
-    }
-  }
-
-  &__name {
-    font-family: 'SegoeUI';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 50px;
-    line-height: 110%;
-    color: #1C1C1C;
-    margin-bottom: 25px;
-  }
-
-  &__before-after-price {
-    margin-bottom: 8px;
-    margin-top: 40px;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &__summ {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    color: #1C1C1C;
-    margin-right: 16px;
-  }
-
-  &__full-summ {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 21px;
-    color: rgba(28, 28, 28, 0.5);
-  }
-
-  &__cashback {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 23px;
-    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    margin-bottom: 28px;
-  }
-
-  &__cashback-btn {
-    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
-    border-radius: 100px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 21px;
-    color: #FFFFFF;
-    width: 408px;
-    height: 60px;
-    cursor: pointer;
-  }
-
-  &__bottom-block {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
   }
 
   &__title {
@@ -110,31 +26,121 @@
     font-size: 50px;
     line-height: 110%;
     color: #1C1C1C;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
+    @include media($small) {
+      margin-bottom: 40px;
+    }
   }
 
-  &__description {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    color: #000000;
-    margin-bottom: 55px;
+  &__title-text {
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 
-  &__btn {
+  &__top-btn {
     width: 310px;
     height: 60px;
     background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
     border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto';
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
     cursor: pointer;
+
+    @include media($small) {
+      display: none;
+    }
+
+    &_tablet {
+      display: none;
+
+      @include media($small) {
+        display: flex;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &__review-item {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  &__review-title {
+    margin-bottom: 8px;
+  }
+
+  &__review-name {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-right: 35px;
+  }
+
+  &__review-date {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__review-description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+    margin-top: 20px;
+    height: 100px;
+  }
+
+  &__review-images {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+
+  &__review-image {
+    width: 166px;
+    height: 172px;
+    object-fit: contain;
+    background: #E9E9E9;
+    margin-right: 20px;
+  }
+
+  &__reviews-btn {
+    width: 310px;
+    height: 60px;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__ellipse-icon {
