@@ -51,6 +51,10 @@
     }
   }
 
+  @include media($xmini) {
+    margin-bottom: 40px;
+  }
+
   &__main-block {
     position: relative;
     background: #E9E9E9;

@@ -93,7 +93,7 @@
 
   &__sale-btn {
     width: 285px;
-    height: 60px;
+    min-height: 60px;
     background: linear-gradient(93.73deg, #FF922E 3.36%, #D51717 100.79%);
     border-radius: 100px;
     border: none;
@@ -108,7 +108,7 @@
 
   &__customer-btn {
     width: 285px;
-    height: 60px;
+    min-height: 60px;
     background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
     border-radius: 100px;
     border: none;

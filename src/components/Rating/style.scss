@@ -1,0 +1,64 @@
+.rating {
+  width: 480px;
+  height: 220px;
+  background: #F6F6F6;
+  border-radius: 10px;
+  display: flex;
+  padding: 27px 40px 0 30px;
+
+  &__one-block {
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: 'SegoeUI';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 50px;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  &__description {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: rgba(28, 28, 28, 0.5);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+  }
+
+  &__review-item {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  &__review-value {
+    font-family: 'SegoeUI';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: rgba(28, 28, 28, 0.5);
+  }
+
+  &__review-band-block {
+    width: 200px;
+    background: #E3E3E3;
+    border-radius: 5px;
+    height: 5px;
+    margin: 0 15px;
+  }
+
+  &__review-band-block {
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 1px;
+    height: 5px;
+  }
+}

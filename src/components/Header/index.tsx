@@ -19,7 +19,7 @@ function Header() {
     <div className={b('')}>
       <div className={b('content')}>
         <div className={b('left-block')}>
-          <div className={b('logo')}>Логотип</div>
+          <a className={b('logo')} href="/">Логотип</a>
           <button className={b('menu-btn')} type="button">
             <img className={b('menu-icon')} src={menuIcon} alt="menu" />
             <span className={b('menu-text')}>Каталог</span>

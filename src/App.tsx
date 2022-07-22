@@ -1,16 +1,21 @@
 import React from 'react';
 import './style.scss';
-import Header from 'components/Header';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import MainPage from 'pages/Main';
+import ProductCardPage from 'pages/ProductCardPage';
 
 function App() {
   return (
-    <div
-      className="App"
-    >
-      <Header />
-      <MainPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/product/:id" element={<ProductCardPage />} />
+      </Routes>
+    </Router>
   );
 }
 

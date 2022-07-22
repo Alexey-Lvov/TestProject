@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import bem from 'utils/bem';
+import { useNavigate } from 'react-router-dom';
 import { PropsInterface } from './interface';
 import './style.scss';
 
@@ -11,6 +12,7 @@ const b = bem('product-item');
 
 function ProductItem(props: PropsInterface) {
   const { item } = props;
+  const navigate = useNavigate();
 
   const [isFocus, setIsFocus] = useState(false);
 
@@ -19,7 +21,14 @@ function ProductItem(props: PropsInterface) {
   };
 
   const handleMouseLeave = () => {
-    setIsFocus(true);
+    setIsFocus(false);
+  };
+
+  const handileClick = () => {
+    navigate(`/product/${item.id}`);
+    window.scrollTo({
+      top: 0,
+    });
   };
 
   return (
@@ -37,7 +46,13 @@ function ProductItem(props: PropsInterface) {
         <div className={b('discount')}>{`${item.discount}%`}</div>
         {isFocus && (
           <div className={b('vual')}>
-            <button className={b('vual-btn')} type="button">Узнать условия</button>
+            <button
+              className={b('vual-btn')}
+              type="button"
+              onClick={handileClick}
+            >
+              Узнать условия
+            </button>
           </div>
         )}
       </div>
