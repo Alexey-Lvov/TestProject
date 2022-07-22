@@ -10,14 +10,14 @@ type Props = {
   reviews: IReview[];
 };
 
+const arr = [5, 4, 3, 2, 1] as const;
+
 function Rating(props: Props) {
   const { reviews = [] } = props;
 
   const countReviews = reviews.length;
   const summRating = reviews.reduce((acc, review) => acc + review.rating, 0);
   const rating = summRating / countReviews;
-
-  const arr = [5, 4, 3, 2, 1] as const;
 
   const percent = reviews.reduce((acc: any, review) => ({
     ...acc,

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import bem from 'utils/bem';
+import { useNavigate } from 'react-router-dom';
 import { PropsInterface } from './interface';
 import './style.scss';
 
@@ -11,6 +12,7 @@ const b = bem('product-item');
 
 function ProductItem(props: PropsInterface) {
   const { item } = props;
+  const navigate = useNavigate();
 
   const [isFocus, setIsFocus] = useState(false);
 
@@ -23,7 +25,10 @@ function ProductItem(props: PropsInterface) {
   };
 
   const handileClick = () => {
-    window.location.href = `/product/${item.id}`;
+    navigate(`/product/${item.id}`);
+    window.scrollTo({
+      top: 0,
+    });
   };
 
   return (

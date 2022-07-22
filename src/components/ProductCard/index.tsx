@@ -24,6 +24,8 @@ function ProductCard() {
     setIsOpenPopup(isOpen);
   };
 
+  const handlePopup = () => openPopup(true);
+
   const countReviews = reviews.length;
   const summRating = reviews.reduce((acc: number, review: IReview) => acc + review.rating, 0);
   const rating = summRating / countReviews;
@@ -40,7 +42,7 @@ function ProductCard() {
             <span className={b('full-summ')}>{`${selectProduct.fullSumm} ₽`}</span>
           </div>
           <span className={b('cashback')}>{`Кэшбэк ${selectProduct.cashback}₽`}</span>
-          <button onClick={() => openPopup(true)} className={b('cashback-btn')} type="button">Узнать условия для получения кэшбэка</button>
+          <button onClick={handlePopup} className={b('cashback-btn')} type="button">Узнать условия для получения кэшбэка</button>
         </div>
       </div>
       <div className={b('bottom-block')}>

@@ -16,10 +16,9 @@ type Props = {
   withText?: boolean;
 };
 
+const arr = [1, 2, 3, 4, 5];
 function StarsRating(props: Props) {
   const { rating, withText, countReviews } = props;
-
-  const arr = [1, 2, 3, 4, 5];
 
   return (
     <div className={b('')}>

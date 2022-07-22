@@ -27,16 +27,27 @@ function ImageSlider(props: Props) {
     });
   };
 
+  const handleScrollLeft = () => scrollList(false);
+  const handleScrollRight = () => scrollList(true);
+
   return (
     <div className={b('')}>
       <div className={b('list')}>
-        <button onClick={() => scrollList(false)} className={b('arrow-btn')} type="button">
+        <button onClick={handleScrollLeft} className={b('arrow-btn')} type="button">
           <img src={arrowIcon} alt="arrow" />
         </button>
         <div className={b('list-images')} ref={listRef}>
-          {images.map((image) => <button className={b('list-image-btn')} onClick={() => selectImage(image)} type="button"><img className={b('list-image')} src={image} alt="img" /></button>)}
+          {images.map((image) => (
+            <button
+              className={b('list-image-btn')}
+              onClick={() => selectImage(image)}
+              type="button"
+            >
+              <img className={b('list-image')} src={image} alt="img" />
+            </button>
+          ))}
         </div>
-        <button onClick={() => scrollList(true)} className={b('arrow-btn', { bottom: true })} type="button">
+        <button onClick={handleScrollRight} className={b('arrow-btn', { bottom: true })} type="button">
           <img src={arrowIcon} alt="arrow" />
         </button>
       </div>
