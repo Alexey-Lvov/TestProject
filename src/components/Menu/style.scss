@@ -104,6 +104,9 @@
     line-height: 21px;
     color: #FFFFFF;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__customer-btn {
@@ -119,6 +122,9 @@
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__top-block {

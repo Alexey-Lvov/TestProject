@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import bem from 'utils/bem';
 import './style.scss';
+import { useNavigate, Link } from 'react-router-dom';
 import Menu from 'components/Menu';
 import searchIcon from 'img/search.png';
 import menuIcon from 'img/menu-icon.png';
@@ -9,18 +10,27 @@ import menuIcon from 'img/menu-icon.png';
 const b = bem('header');
 
 function Header() {
+  const navigate = useNavigate();
+
   const [isOpenMenu, openMenu] = useState(false);
 
   const handleClick = () => {
     openMenu(true);
   };
 
+  const clickCatalog = () => {
+    navigate('/catalog');
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   return (
     <div className={b('')}>
       <div className={b('content')}>
         <div className={b('left-block')}>
-          <a className={b('logo')} href="/">Логотип</a>
-          <button className={b('menu-btn')} type="button">
+          <Link className={b('logo')} to="/">Логотип</Link>
+          <button className={b('menu-btn')} type="button" onClick={clickCatalog}>
             <img className={b('menu-icon')} src={menuIcon} alt="menu" />
             <span className={b('menu-text')}>Каталог</span>
           </button>
@@ -34,12 +44,12 @@ function Header() {
           </button>
         </div>
         <div className={b('right-block')}>
-          <button className={b('sale-btn')} type="button">
+          <Link className={b('sale-btn')} to="/sale">
             Я продавец
-          </button>
-          <button className={b('customer-btn')} type="button">
+          </Link>
+          <Link className={b('customer-btn')} to="/customer">
             Я покупатель
-          </button>
+          </Link>
         </div>
       </div>
       {ReactDOM.createPortal(<Menu isOpenMenu={isOpenMenu} close={() => openMenu(false)} />, document.getElementById('root') as HTMLElement)}

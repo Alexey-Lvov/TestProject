@@ -28,6 +28,10 @@ img {
   box-sizing: border-box;
 }
 
+ul {
+  margin: 0;
+}
+
 @font-face {
   font-family: SegoeUI;
   src: local('SegoeUI'), url(./fonts/segoe-ui.ttf) format('opentype');

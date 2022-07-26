@@ -1,0 +1,136 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.product-list-pagination {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @include media($small) {
+    padding: 0 30px;
+  }
+
+  &__title-block {
+    font-family: 'SegoeUI';
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: #1C1C1C;
+    width: 100%;
+
+    @include media($xmini) {
+      font-size: 25px;
+      line-height: 27px;
+    }
+  }
+
+  &__title-text {
+    color: #AF2EFF;
+  }
+
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include media($xlmini) {
+      flex-direction: column;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+  }
+
+  &__pagination-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+
+    &_select {
+      background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+      color: #FFFFFF;
+    }
+  }
+
+  &__next-pagination {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  &__next-icon {
+    margin-left: 10px;
+  }
+
+  &__sort-block {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+
+    @include media($xmini) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__sort-text {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 15px;
+
+    @include media($xmini) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__sort-btn {
+    padding: 9px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_select {
+      position: relative;
+      background: $white-color;
+      background-clip: padding-box; /* !importanté */
+      border: solid 2px transparent; /* !importanté */
+      border-radius: 100px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -2px; /* !importanté */
+        border-radius: inherit; /* !importanté */
+        background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+
+      }
+    }
+  }
+}
