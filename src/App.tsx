@@ -10,6 +10,8 @@ import ProductCardPage from 'pages/ProductCardPage';
 import CatalogPage from 'pages/CatalogPage';
 import CusomerPage from 'pages/CustomerPage';
 import SalePage from 'pages/SalePage';
+import SignUpPage from 'pages/SignUpPage';
+import ProfilePage from 'pages/ProfilePage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/customer" element={<CusomerPage />} />
         <Route path="/sale" element={<SalePage />} />
+        <Route path="/signup/:type" element={<SignUpPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </Router>
   );

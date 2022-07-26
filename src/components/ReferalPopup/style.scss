@@ -1,0 +1,91 @@
+
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.referal-popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 1000px;
+    height: 550px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include media($xmini) {
+      width: 322px;
+      height: 370px;
+    }
+  }
+
+  &__title {
+    font-family: 'SegoeUI';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 47px;
+  }
+
+  &__input {
+    width: 532px;
+    height: 64px;
+    background: #E9E9E9;
+    border-radius: 100px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(28, 28, 28, 0.7);
+    padding: 20px 40px;
+    border: none;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: rgba(28, 28, 28, 0.7);
+    }
+  }
+
+  &__btn {
+    width: 529px;
+    height: 65px;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 107px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+  }
+
+  &__close-icon {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+}
