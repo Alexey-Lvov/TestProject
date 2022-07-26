@@ -15,6 +15,7 @@ a {
 
 span {
   box-sizing: border-box;
+  display: inline-block;
 }
 
 button {
@@ -22,6 +23,11 @@ button {
   border: none;
   background-color: #FFFF;
   padding: 0;
+}
+
+input {
+  outline: none;
+  box-sizing: border-box;
 }
 
 img {

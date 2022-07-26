@@ -1,59 +1,116 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import bem from 'utils/bem';
+import InputMask from 'react-input-mask';
+import { useParams } from 'react-router-dom';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import ozonImage from 'img/ozon-image.png';
-import yandexImage from 'img/yandex-image.png';
-import wildberriesImage from 'img/wildberries-image.png';
+import Select from 'react-select';
+import CheckInput from 'components/CheckInput';
+import { createUserStart } from 'redux/auth/reducer';
 import './style.scss';
 
 const b = bem('sign-up-page');
 
-function CusomerPage() {
-  const navigate = useNavigate();
+const options = [{ value: 7, label: '+7' }, { value: 8, label: '+8' }, { value: 9, label: '+9' }];
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, []);
+const customStyles = {
+  control: (provided: any) => ({
+    ...provided,
+    width: '106px',
+    height: '50px',
+    border: '1px solid #D9D9D9',
+    borderRadius: '10px',
+    outline: 'none',
+  }),
+  option: (provided: any) => ({
+    ...provided,
+    width: '106px',
+  }),
+  container: (provided: any) => ({
+    ...provided,
+    width: '106px',
+  }),
+};
 
-  const handleClick = () => {
-    navigate('/signup/customer');
+function SignUpPage() {
+  const { type } = useParams<{ type: string }>();
+  const dispatch = useDispatch();
+
+  const [number, setNumber] = useState('');
+  const [code, setCode] = useState('');
+  const [isShowCode, showCode] = useState(false);
+
+  const getText = () => {
+    switch (type) {
+      case 'customer': {
+        return 'покупатель';
+      }
+      case 'saler': {
+        return 'продавец';
+      }
+      default: return '';
+    }
+  };
+
+  const handleChangeNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNumber(e.target.value);
+  };
+
+  const handleChangeCode = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(4);
+    dispatch(createUserStart({ type: type || '', number }));
+    setCode(e.target.value);
+  };
+
+  const clickCode = () => {
+    showCode(true);
   };
 
   return (
     <div className={b('')}>
-      <Header />
+      <Header noControls />
       <div className={b('main-content')}>
-        <div className={b('block-content')}>
-          <span className={b('sub-title')}>Я продавец</span>
-          <span className={b('title')}>Информация о сайте</span>
-          <span className={b('description')}>Здесь представлена продукция, за которую продавцы на маркетплейсах вернут Вам вознаграждение (кэшбэк)</span>
-          <div className={b('image-list')}>
-            <img className={b('image')} src={wildberriesImage} alt="wildberries" />
-            <img className={b('image')} src={ozonImage} alt="ozon" />
-            <img className={b('image')} src={yandexImage} alt="yandex" />
+        <div className={b('title')}>
+          {'Войдите или создайте\nпрофиль'}
+          <span className={b('title-text')}>
+            {' как '}
+            {getText()}
+          </span>
+        </div>
+        <div className={b('container')}>
+          <span className={b('contact')}>Контактный телефон</span>
+          <div className={b('input-block')}>
+            <Select
+              className={b('select')}
+              options={options}
+              styles={customStyles}
+              value={options[0]}
+            />
+            <InputMask
+              className={b('input-number')}
+              mask="(999) 999 - 99 - 99"
+              value={number}
+              onChange={handleChangeNumber}
+              alwaysShowMask
+              maskPlaceholder="-"
+            />
           </div>
-        </div>
-        <div className={b('block-content')}>
-          <span className={b('sub-title')}>Я продавец</span>
-          <span className={b('title')}>Цель сайта</span>
-          <span className={b('description')}>Помочь Вам сэкономить при покупке товаров на маркетплейсах.</span>
-        </div>
-        <div className={b('block-content')}>
-          <span className={b('sub-title')}>Я продавец</span>
-          <span className={b('title')}>Для кого сайт?</span>
-          <span className={b('description')}>Для всех людей, которые пользуются маркетплейсами.</span>
-        </div>
-        <div className={b('block-content')}>
-          <span className={b('sub-title')}>Я продавец</span>
-          <span className={b('title')}>Что нужно делать?</span>
-          <span className={b('description')}>Совершать покупки, писать отзывы и получать за это кэшбэк.</span>
-        </div>
-        <div className={b('block-content')}>
-          <button onClick={handleClick} className={b('register-btn')} type="button">Зарегистрироваться</button>
+          {isShowCode && (
+            <InputMask
+              className={b('input-code')}
+              mask="9 9 9 9"
+              value={code}
+              onChange={handleChangeCode}
+              alwaysShowMask
+              maskPlaceholder="-"
+            />
+          )}
+          <button onClick={clickCode} className={b('btn')} type="button">Получить код</button>
+          <div className={b('checked-block')}>
+            <CheckInput />
+            <span className={b('checked-text')}>{'Согласен с условиями Правил пользования\nторговой площадкой и правилами возврата'}</span>
+          </div>
         </div>
       </div>
       <Footer />
@@ -61,4 +118,4 @@ function CusomerPage() {
   );
 }
 
-export default CusomerPage;
+export default SignUpPage;
