@@ -2,6 +2,7 @@ import React from 'react';
 import bem from 'utils/bem';
 import closeIcon from 'img/close-icon.png';
 import searchIcon from 'img/search.png';
+import { Link, useNavigate } from 'react-router-dom';
 import menuIcon from 'img/menu-icon.png';
 import { PropsInterface } from './interface';
 import './style.scss';
@@ -16,11 +17,20 @@ const defaultProps = {
 function Menu(props: PropsInterface) {
   const { close, isOpenMenu } = props;
 
+  const navigate = useNavigate();
+
+  const clickCatalog = () => {
+    navigate('/catalog');
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   return (
     <div className={b('', { open: isOpenMenu })}>
       <div className={b('content', { open: isOpenMenu })}>
         <div className={b('top-block')}>
-          <button className={b('menu-btn')} type="button">
+          <button className={b('menu-btn')} type="button" onClick={clickCatalog}>
             <img className={b('menu-icon')} src={menuIcon} alt="menu" />
             <span className={b('menu-text')}>Каталог</span>
           </button>
@@ -32,12 +42,12 @@ function Menu(props: PropsInterface) {
           <img className={b('search-icon')} src={searchIcon} alt="icon" />
           <input className={b('search-input')} placeholder="Хочу найти" />
         </div>
-        <button className={b('sale-btn')} type="button">
+        <Link className={b('sale-btn')} to="/sale">
           Я продавец
-        </button>
-        <button className={b('customer-btn')} type="button">
+        </Link>
+        <Link className={b('customer-btn')} to="/customer">
           Я покупатель
-        </button>
+        </Link>
       </div>
     </div>
   );

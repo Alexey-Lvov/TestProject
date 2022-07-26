@@ -9,7 +9,5 @@ export interface Product {
 }
 
 export interface PropsInterface {
-  item: Product;
-  isBig?: boolean;
-  noMargin?: boolean;
+  title?: string;
 }

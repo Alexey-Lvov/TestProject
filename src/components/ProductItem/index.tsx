@@ -11,7 +11,8 @@ const defaultProps = {
 const b = bem('product-item');
 
 function ProductItem(props: PropsInterface) {
-  const { item } = props;
+  const { item, isBig, noMargin } = props;
+
   const navigate = useNavigate();
 
   const [isFocus, setIsFocus] = useState(false);
@@ -32,9 +33,9 @@ function ProductItem(props: PropsInterface) {
   };
 
   return (
-    <div className={b('')}>
+    <div className={b('', { 'no-margin': noMargin, big: isBig })}>
       <div
-        className={b('main-block')}
+        className={b('main-block', { big: isBig })}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -43,7 +44,7 @@ function ProductItem(props: PropsInterface) {
           <span className={b('summ')}>{`${item.summ}₽`}</span>
           <span className={b('full-summ')}>{`${item.fullSumm}₽`}</span>
         </div>
-        <div className={b('discount')}>{`${item.discount}%`}</div>
+        <div className={b('discount', { big: isBig })}>{`- ${item.discount}%`}</div>
         {isFocus && (
           <div className={b('vual')}>
             <button

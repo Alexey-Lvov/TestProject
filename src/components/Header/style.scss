@@ -150,6 +150,9 @@
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include media($xmini) {
       display: none;
@@ -170,6 +173,9 @@
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include media($xmini) {
       display: none;

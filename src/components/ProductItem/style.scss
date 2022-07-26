@@ -9,6 +9,10 @@
     margin-right: 0;
   }
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   @include media(1407) {
     &:nth-child(4n+4) {
       margin-right: 0;
@@ -45,15 +49,69 @@
     &:nth-child(5n+5) {
       margin-right: 30px;
     }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 
   @include media($xmini) {
     margin-bottom: 40px;
   }
+
+  &_big {
+    margin-right: 20px;
+    margin-bottom: 30px;
+
+    &:nth-child(5n+5) {
+      margin-right: 20px;
+    }
+
+    &:nth-child(4n+4) {
+      margin-right: 0;
+    }
+
+    @include media(1279) {
+      &:nth-child(4n+4) {
+        margin-right: 20px;
+      }
+
+      &:nth-child(3n+3) {
+        margin-right: 0px;
+      }
+    }
+
+    @include media($small) {
+      margin-right: 12px;
+      margin-bottom: 25px;
+
+      &:nth-child(5n+5) {
+        margin-right: 12px;
+      }
+
+      &:nth-child(4n+4) {
+        margin-right: 12px;
+      }
+    }
+
+    @include media(998) {
+
+      &:nth-child(3n+3) {
+        margin-right: 12px;
+      }
+
+      &:nth-child(2n+2) {
+        margin-right: 0;
+      }
+    }
+
+    @include media($xlmini) {
+      &:nth-child(3n+3) {
+        margin-right: 0px;
+      }
+
+      &:nth-child(1n+1) {
+        margin-right: 0px;
+      }
+    }
+  }
+
 
   &__main-block {
     position: relative;
@@ -63,6 +121,11 @@
     height: 270px;
     margin-bottom: 22px;
     cursor: pointer;
+
+    &_big {
+      width: 305px;
+      height: 293px;
+    }
   }
 
   &__img {
@@ -117,6 +180,10 @@
     left: 10px;
     bottom: 10px;
     position: absolute;
+
+    &_big {
+      bottom: 33px;
+    }
   }
 
   &__cashback {
