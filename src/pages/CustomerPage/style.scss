@@ -1,0 +1,139 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.customer-page {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 150px;
+
+  &__main-content {
+    @include media($small) {
+      padding: 0 30px;
+    }
+  }
+
+  &__block-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1280px;
+    margin-bottom: 120px;
+
+    @include media($small) {
+      margin-bottom: 100px;
+    }
+
+    @include media($xmini) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    font-family: 'SegoeUI';
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: #000000;
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+
+    @include media($xlmini) {
+      white-space: normal;
+    }
+
+    @include media($xmini) {
+      font-family: 'SegoeUI';
+      font-weight: 900;
+      font-size: 35px;
+      line-height: 110%;
+    }
+  }
+
+  &__sub-title {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: #000000;
+    white-space: pre-wrap;
+
+    @include media($xlmini) {
+      white-space: normal;
+    }
+  }
+
+  &__description-color {
+    color: #AF2EFF;
+  }
+
+  &__image-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  &__image {
+    width: 305px;
+    height: 109px;
+    background: #F5F2F5;
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: contain;
+    padding: 20px 30px;
+
+    @include media($small) {
+      margin-bottom: 20px;
+    }
+
+    @include media($xlmini) {
+      margin-right: 0;
+      flex-direction: column;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__sub-description {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    color: #000000;
+    white-space: pre-wrap;
+    margin: 30px 0;
+
+    @include media($xlmini) {
+      white-space: normal;
+    }
+  }
+
+  &__register-btn {
+    width: 100%;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    border-radius: 100px;
+    height: 70px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    max-width: 1280px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+}

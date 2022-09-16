@@ -1,0 +1,39 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.advertising-strip {
+  width: 110%;
+  transform: rotate(-1.91deg);
+  height: 100px;
+  margin-top: 45px;
+  margin-bottom: 110px;
+  position: relative;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    margin-left: 5vw;
+  }
+
+  &__one-text {
+    margin-left: 36px;
+    font-family: 'SegoeUI';
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: $white-color;
+    transform: rotate(-1.91deg);
+    white-space: nowrap;
+  }
+
+  &__two-text {
+    margin-left: 36px;
+  }
+}

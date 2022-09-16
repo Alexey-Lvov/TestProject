@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  box-sizing: border-box;
+  color: #000000;
+  text-decoration: none; /* no underline */
+}
+
+span {
+  box-sizing: border-box;
+}
+
+button {
+  box-sizing: border-box;
+  border: none;
+  background-color: #FFFF;
+  padding: 0;
+}
+
+img {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+
+@font-face {
+  font-family: SegoeUI;
+  src: local('SegoeUI'), url(./fonts/segoe-ui.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: SegoeUI;
+  font-weight: 900;
+  src: local('SegoeUI'), url(./fonts/segoe-ui-gras.ttf) format('opentype');
+}

@@ -1,0 +1,78 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.product-list-line {
+  width: 95vw;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @include media($small) {
+    border: none;
+    padding: 0 30px;
+  }
+
+  &__title-block {
+    font-family: 'SegoeUI';
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 110%;
+    color: #1C1C1C;
+    width: 100%;
+
+    @include media($xmini) {
+      font-size: 25px;
+      line-height: 27px;
+    }
+  }
+
+  &__title-text {
+    color: #AF2EFF;
+  }
+
+  &__list {
+    margin-top: 60px;
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    width: 100%;
+
+    @include media($xmini) {
+      margin-top: 60px;
+    }
+  }
+
+  &__pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: $white-color;
+    background-clip: padding-box; /* !importanté */
+    border: solid 2px transparent; /* !importanté */
+    border-radius: 100px;
+    width: 200px;
+    height: 60px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -2px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(93.73deg, #AF2EFF 3.36%, #D517AB 100.79%);
+    }
+
+    @include media($small) {
+      display: none;
+    }
+  }
+}
